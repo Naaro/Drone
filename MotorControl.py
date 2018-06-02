@@ -30,6 +30,10 @@ def Setup(Motor1GPIO,Motor2GPIO,Motor3GPIO,Motor4GPIO):
 	GPIO.output(Motor2GPIO,False)
 	GPIO.output(Motor3GPIO,False)
 	GPIO.output(Motor4GPIO,False)
+	Configuration.M1 = Motor1GPIO
+	Configuration.M2 = Motor2GPIO
+	Configuration.M3 = Motor3GPIO
+	Configuration.M4 = Motor4GPIO
 
 def Start():
 	# Configure the ESC's
