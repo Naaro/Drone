@@ -34,10 +34,10 @@ def Setup(Motor1GPIO,Motor2GPIO,Motor3GPIO,Motor4GPIO):
 def Start():
 	# Configure the ESC's
 	print('Configuring the ESCs....')
-	Configuration.M1 = GPIO.PWM(M1B,Configuration.MaxFrequency)
-	Configuration.M2 = GPIO.PWM(M2B,Configuration.MaxFrequency)
-	Configuration.M3 = GPIO.PWM(M1F,Configuration.MaxFrequency)
-	Configuration.M4 = GPIO.PWM(M2F,Configuration.MaxFrequency)
+	Configuration.M1 = GPIO.PWM(Configuration.M1,Configuration.MaxFrequency)
+	Configuration.M2 = GPIO.PWM(Configuration.M2,Configuration.MaxFrequency)
+	Configuration.M3 = GPIO.PWM(Configuration.M3,Configuration.MaxFrequency)
+	Configuration.M4 = GPIO.PWM(Configuration.M4,Configuration.MaxFrequency)
 	Configuration.M1.start(Configuration.Off)
 	Configuration.M2.start(Configuration.Off)
 	Configuration.M3.start(Configuration.Off)
