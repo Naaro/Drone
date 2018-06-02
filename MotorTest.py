@@ -1,4 +1,4 @@
-import gyo as gyro
+#import gyo as gyro
 import RPi.GPIO as GPIO
 import time
 import os
@@ -20,8 +20,8 @@ try:
 		MC.SetMotor3(Strength)
 		MC.SetMotor4(Strength)
 		time.sleep(.25)
-	except KeyboardInterrupt:
-		MC.End()
+except KeyboardInterrupt:
+	MC.End()
 except:
 	MC.End()
 
