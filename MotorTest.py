@@ -5,10 +5,11 @@ import os
 import MotorControl as MC
 
 print('Run Setup')
-x = input('Press Enter To Continue...')
+raw_input('Press Enter To Continue...')
 MC.Setup(38,29,35,26)
+
 print('Configuring and starting Motors')
-x = input('Press Enter To Continue...')
+raw_input('Press Enter To Continue...')
 MC.Start()
 
 Strength = 0
