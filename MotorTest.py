@@ -5,10 +5,10 @@ import os
 import MotorControl as MC
 
 print('Run Setup')
-x = input('')
+x = input('Press Enter To Continue...')
 MC.Setup(38,29,35,26)
 print('Configuring and starting Motors')
-x = input('')
+x = input('Press Enter To Continue...')
 MC.Start()
 
 Strength = 0
@@ -17,7 +17,7 @@ try:
 	while Strength<30:
 		os.system('clear')
 		print('Strength = ' + str(Strength))
-		I = input('Set Strength (100 Max) : ')
+		I = input('Set % Strength (100 Max) : ')
 		Strength=float(I)
 		MC.SetMotor1(Strength)
 		MC.SetMotor2(Strength)
