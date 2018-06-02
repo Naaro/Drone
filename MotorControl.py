@@ -11,10 +11,10 @@ class Configuration():
 	High = 40
 	Limiter = 25
 	
-	M1 = null # Motor 1
-	M2 = null # Motor 2
-	M3 = null # Motor 3
-	M4 = null # Motor 4
+	M1 = None # Motor 1
+	M2 = None # Motor 2
+	M3 = None # Motor 3
+	M4 = None # Motor 4
 
 
 # Functions
