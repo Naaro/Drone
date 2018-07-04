@@ -13,7 +13,7 @@ print('Running MC.Start to Configure the Motors')
 MC.Start()
 
 
-Strength = -1
+Strength = 0
 MC.SetMotor1(Strength)
 MC.SetMotor2(Strength)
 MC.SetMotor3(Strength)
@@ -32,7 +32,8 @@ except KeyboardInterrupt:
 	MC.End()
 except:
 	MC.End()
-
+	
+exit()
 	
 # Direct Motor Control Test
 try:
