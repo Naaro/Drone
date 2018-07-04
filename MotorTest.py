@@ -6,18 +6,18 @@ import MotorControl as MC
 
 print('Running MC.Setup')
 #raw_input('Press Enter To Continue...')
-MC.Setup(38,29,35,26)
+#MC.Setup(38,29,35,26)
 
 print('Running MC.Start to Configure the Motors')
 #raw_input('Press Enter To Continue...')
-MC.Start()
+#MC.Start()
 
 
 Strength = 0
-MC.SetMotor1(Strength)
-MC.SetMotor2(Strength)
-MC.SetMotor3(Strength)
-MC.SetMotor4(Strength)
+#MC.SetMotor1(Strength)
+#MC.SetMotor2(Strength)
+#MC.SetMotor3(Strength)
+#MC.SetMotor4(Strength)
 
 
 # Proportional Test
