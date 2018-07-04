@@ -37,26 +37,26 @@ def Setup(Motor1GPIO,Motor2GPIO,Motor3GPIO,Motor4GPIO):
 
 def Start():
 	# Configure the ESC's
-	print('Configuring the ESCs....')
+	print('Configuring the ESCs. Disconnect battery if connected and press Enter when ready.')
 	Configuration.M1 = GPIO.PWM(Configuration.M1,Configuration.MaxFrequency)
 	Configuration.M2 = GPIO.PWM(Configuration.M2,Configuration.MaxFrequency)
 	Configuration.M3 = GPIO.PWM(Configuration.M3,Configuration.MaxFrequency)
 	Configuration.M4 = GPIO.PWM(Configuration.M4,Configuration.MaxFrequency)
-	Configuration.M1.start(Configuration.Off)
-	Configuration.M2.start(Configuration.Off)
-	Configuration.M3.start(Configuration.Off)
-	Configuration.M4.start(Configuration.Off)
-	time.sleep(1)
-	Configuration.M1.ChangeDutyCycle(Configuration.High)
-	Configuration.M2.ChangeDutyCycle(Configuration.High)
-	Configuration.M3.ChangeDutyCycle(Configuration.High)
-	Configuration.M4.ChangeDutyCycle(Configuration.High)
-	time.sleep(2)
+	Configuration.M1.start(Configuration.High)
+	Configuration.M2.start(Configuration.High)
+	Configuration.M3.start(Configuration.High)
+	Configuration.M4.start(Configuration.High)
+	raw_input('Connect Battery, Then Press Enter To Set Throttle To Low.')
 	Configuration.M1.ChangeDutyCycle(Configuration.Low)
 	Configuration.M2.ChangeDutyCycle(Configuration.Low)
 	Configuration.M3.ChangeDutyCycle(Configuration.Low)
 	Configuration.M4.ChangeDutyCycle(Configuration.Low)
-	time.sleep(5)
+	raw_input('Connect Battery, Then press Enter to continue.')
+	Configuration.M1.ChangeDutyCycle(Configuration.Low)
+	Configuration.M2.ChangeDutyCycle(Configuration.Low)
+	Configuration.M3.ChangeDutyCycle(Configuration.Low)
+	Configuration.M4.ChangeDutyCycle(Configuration.Low)
+	raw_input('Wait for the beeping to stop, then press Enter to finish configurations')
 	
 	
 # Motor Power % Setter Functions
