@@ -28,8 +28,8 @@ try:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
 		print('X:'+str(x)+' Y:'+str(y))
-	except KeyboardInterrupt:
-		MC.End()
+except KeyboardInterrupt:
+	MC.End()
 except:
 	MC.End()
 
