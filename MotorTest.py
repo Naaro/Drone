@@ -23,6 +23,8 @@ MC.SetMotor4(Strength)
 # Proportional Test
 print('Begining Proportional Test')
 PGain = 0.0001
+x=0
+y=0
 try:
 	while True:
 		#x = GYRO.getx() * PGain # Get gyro input and dampen it
