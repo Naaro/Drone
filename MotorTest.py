@@ -27,11 +27,11 @@ x=0
 y=0
 try:
 	while True:
-		#x = GYRO.getx() * PGain # Get gyro input and dampen it
-		#y = GYRO.gety() * PGain 
-		print('X:'+str(x)+' Y:'+str(y))
-		x+=1
-		y+=1
+		x = GYRO.getx() * PGain # Get gyro input and dampen it
+		y = GYRO.gety() * PGain 
+		#print('X:'+str(x)+' Y:'+str(y))
+		#x+=1
+		#y+=1
 		time.sleep(.25)
 except KeyboardInterrupt:
 	MC.End()
