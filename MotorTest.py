@@ -28,8 +28,12 @@ try:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
 		print('X:'+str(x)+' Y:'+str(y))
-MC.End()
+	except KeyboardInterrupt:
+		MC.End()
+except:
+	MC.End()
 
+	
 # Direct Motor Control Test
 try:
 	while Strength<30:
