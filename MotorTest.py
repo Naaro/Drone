@@ -4,11 +4,11 @@ import time
 import os
 import MotorControl as MC
 
-print('Run Setup')
+print('Running MC.Setup')
 raw_input('Press Enter To Continue...')
 MC.Setup(38,29,35,26)
 
-print('Configuring and starting Motors')
+print('Running MC.Start to Configure the Motors')
 raw_input('Press Enter To Continue...')
 MC.Start()
 
