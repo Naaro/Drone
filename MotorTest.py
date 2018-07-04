@@ -1,19 +1,36 @@
-#import gyo as gyro
+import gyro as GYRO
 import RPi.GPIO as GPIO
 import time
 import os
 import MotorControl as MC
 
 print('Running MC.Setup')
-raw_input('Press Enter To Continue...')
+#raw_input('Press Enter To Continue...')
 MC.Setup(38,29,35,26)
 
 print('Running MC.Start to Configure the Motors')
-raw_input('Press Enter To Continue...')
+#raw_input('Press Enter To Continue...')
 MC.Start()
 
-Strength = 0
 
+Strength = -1
+MC.SetMotor1(Strength)
+MC.SetMotor2(Strength)
+MC.SetMotor3(Strength)
+MC.SetMotor4(Strength)
+
+
+# Proportional Test
+print('Begining Proportional Test')
+PGain = 0.0001
+try:
+	while True:
+		x = GYRO.getx() * PGain # Get gyro input and dampen it
+		y = GYRO.gety() * PGain 
+		print('X:'+str(x)+' Y:'+str(y))
+MC.End()
+
+# Direct Motor Control Test
 try:
 	while Strength<30:
 		os.system('clear')
