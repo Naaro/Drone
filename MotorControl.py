@@ -37,7 +37,7 @@ def Setup(Motor1GPIO,Motor2GPIO,Motor3GPIO,Motor4GPIO):
 
 def Start():
 	# Configure the ESC's
-	print('Configuring the ESCs. Disconnect battery if connected and press Enter when ready.')
+	raw_input('Configuring the ESCs. Disconnect battery if connected and press Enter when ready.')
 	Configuration.M1 = GPIO.PWM(Configuration.M1,Configuration.MaxFrequency)
 	Configuration.M2 = GPIO.PWM(Configuration.M2,Configuration.MaxFrequency)
 	Configuration.M3 = GPIO.PWM(Configuration.M3,Configuration.MaxFrequency)
@@ -51,12 +51,7 @@ def Start():
 	Configuration.M2.ChangeDutyCycle(Configuration.Low)
 	Configuration.M3.ChangeDutyCycle(Configuration.Low)
 	Configuration.M4.ChangeDutyCycle(Configuration.Low)
-	raw_input('Connect Battery, Then press Enter to continue.')
-	Configuration.M1.ChangeDutyCycle(Configuration.Low)
-	Configuration.M2.ChangeDutyCycle(Configuration.Low)
-	Configuration.M3.ChangeDutyCycle(Configuration.Low)
-	Configuration.M4.ChangeDutyCycle(Configuration.Low)
-	raw_input('Wait for the beeping to stop, then press Enter to finish configurations')
+	raw_input('Wait for the beeping to stop, Then press Enter to continue.')
 	
 	
 # Motor Power % Setter Functions
