@@ -1,4 +1,4 @@
-import gyo as gyro
+import gyro as GYRO
 import RPi.GPIO as GPIO
 import time
 import os
@@ -25,8 +25,8 @@ print('Begining Proportional Test')
 PGain = 0.0001
 try:
 	while True:
-		x = gyro.getx() * PGain # Get gyro input and dampen it
-		y = gyro.gety() * PGain 
+		x = GYRO.getx() * PGain # Get gyro input and dampen it
+		y = GYRO.gety() * PGain 
 		print('X:'+str(x)+' Y:'+str(y))
 MC.End()
 
