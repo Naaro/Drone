@@ -49,7 +49,7 @@ try:
 			M2S += abs(y)
 			M3S -= abs(y)
 			M4S += abs(y)
-		elif <>0:
+		elif y<0:
 			M1S += abs(y)
 			M2S -= abs(y)
 			M3S += abs(y)
