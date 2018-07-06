@@ -27,12 +27,12 @@ def manual_drive(): #You will use this function to program your ESC if required
         if inp == "stop":
             stop()
             break
-		elif inp == "control":
-			control()
-			break
-		elif inp == "arm":
-			arm()
-			break	
+        elif inp == "control":
+            control()
+            break
+        elif inp == "arm":
+            arm()
+            break	
         else:
             pi.set_servo_pulsewidth(ESC,inp)
                 
