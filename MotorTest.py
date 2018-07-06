@@ -10,8 +10,8 @@ MC.Setup(38,29,35,26)
 
 print('Running MC.Start to Configure the Motors')
 #raw_input('Press Enter To Continue...')
-MC.Calibrate()
-
+#MC.Calibrate()
+MC.Arm()
 
 Strength = 0
 MC.SetMotor1(Strength)
