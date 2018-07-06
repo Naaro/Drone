@@ -33,7 +33,8 @@ try:
 	while True:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
-		print('X:'+str(x)+' Y:'+str(y))
+		#print('X:'+str(x)+' Y:'+str(y))
+		print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
 		if x>0:
 			M1S += abs(x)
 			M2S += abs(x)
