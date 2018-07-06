@@ -10,7 +10,7 @@ MC.Setup(38,29,35,26)
 
 print('Running MC.Start to Configure the Motors')
 #raw_input('Press Enter To Continue...')
-MC.Start()
+MC.Configure()
 
 
 Strength = 0
