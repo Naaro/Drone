@@ -20,8 +20,8 @@ M3S = 0
 M4S = 0
 MC.SetMotor1(0)
 MC.SetMotor2(0)
-MC.SetMotor3(0)
-MC.SetMotor4(0)
+MC.SetMotor3(-10)
+MC.SetMotor4(-10)
 
 
 # Proportional Test
@@ -34,7 +34,8 @@ try:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
 		#print('X:'+str(x)+' Y:'+str(y))
-		print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
+		#print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
+		print('M1:'+str(M1S)+'  M2:'+str(M2S))
 		if x>0:
 			M1S += abs(x)
 			M2S += abs(x)
@@ -57,8 +58,8 @@ try:
 			M4S -= abs(y)
 		MC.SetMotor1(M1S)
 		MC.SetMotor2(M2S)
-		MC.SetMotor3(M3S)
-		MC.SetMotor4(M4S)
+		#MC.SetMotor3(M3S)
+		#MC.SetMotor4(M4S)
 		time.sleep(.01)
 except KeyboardInterrupt:
 	MC.End()
