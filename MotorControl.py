@@ -91,28 +91,28 @@ def SetMotor1(PowerPercent):
 	Max = Configuration.High - Configuration.Low
 	Change = Configuration.Low+(Max*(PowerPercent/100.0))
 	if(Change<Configuration.Limiter):
-		print('Setting Motor 1 To : '+str(Change) + '('+str(PowerPercent)+')')
+		#print('Setting Motor 1 To : '+str(Change) + '('+str(PowerPercent)+')')
 		Configuration.M1.ChangeDutyCycle(Change)
 
 def SetMotor2(PowerPercent):
 	Max = Configuration.High - Configuration.Low
 	Change = Configuration.Low+(Max*(PowerPercent/100.0))
 	if(Change<Configuration.Limiter):
-		print('Setting Motor 2 To : '+str(Change) + '('+str(PowerPercent)+')')
+		#print('Setting Motor 2 To : '+str(Change) + '('+str(PowerPercent)+')')
 		Configuration.M2.ChangeDutyCycle(Change)
 	
 def SetMotor3(PowerPercent):
 	Max = Configuration.High - Configuration.Low
 	Change = Configuration.Low+(Max*(PowerPercent/100.0))
 	if(Change<Configuration.Limiter):
-		print('Setting Motor 3 To : '+str(Change) + '('+str(PowerPercent)+')')
+		#print('Setting Motor 3 To : '+str(Change) + '('+str(PowerPercent)+')')
 		Configuration.M3.ChangeDutyCycle(Change)
 	
 def SetMotor4(PowerPercent):
 	Max = Configuration.High - Configuration.Low
 	Change = Configuration.Low+(Max*(PowerPercent/100.0))
 	if(Change<Configuration.Limiter):
-		print('Setting Motor 4 To : '+str(Change) + '('+str(PowerPercent)+')')
+		#print('Setting Motor 4 To : '+str(Change) + '('+str(PowerPercent)+')')
 		Configuration.M4.ChangeDutyCycle(Change)
 	
 def End():
