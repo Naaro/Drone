@@ -29,13 +29,26 @@ print('Begining Proportional Test')
 PGain = 0.001
 x=0
 y=0
+HighX = 0
+LowX = 0
+HighY = 0
+LowY = 0
 try:
 	while True:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
-		print('X:'+str(x)+' Y:'+str(y))
+		#print('X:'+str(x)+' Y:'+str(y))
 		#print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
 		#print('M1:'+str(M1S)+'  M3:'+str(M3S))
+		if x>HighX:
+			HighX = x
+		if x<LowX:
+			LowX = x
+		if y>HighY:
+			HighY = y
+		if y<LowY:
+			LowY = y
+		print('HighX:'+str(HighX)+'  LowX:'+str(LowX)+'  HighY:'+str(HighY)+'  LowY:'+str(LowY))
 		if x>0:
 			M1S += abs(x)
 			M2S -= abs(x)
