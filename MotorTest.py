@@ -13,7 +13,11 @@ print('Running MC.Start to Configure the Motors')
 #MC.Calibrate()
 MC.Arm()
 
-Strength = 0
+Strength = 19
+M1S = 19
+M2S = 19
+M3S = 19
+M4S = 19
 MC.SetMotor1(Strength)
 MC.SetMotor2(Strength)
 MC.SetMotor3(Strength)
@@ -30,9 +34,31 @@ try:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
 		#print('X:'+str(x)+' Y:'+str(y))
-		#x+=1
-		#y+=1
-		time.sleep(.25)
+		if x>0:
+			M1S += abs(x)
+			M2S += abs(x)
+			M3S -= abs(x)
+			M4S -= abs(x)
+		elif x<0:
+			M1S -= abs(x)
+			M2S -= abs(x)
+			M3S += abs(x)
+			M4S += abs(x)
+		if y>0:
+			M1S -= abs(y)
+			M2S += abs(y)
+			M3S -= abs(y)
+			M4S += abs(y)
+		elif <>0:
+			M1S += abs(y)
+			M2S -= abs(y)
+			M3S += abs(y)
+			M4S -= abs(y)
+		MC.SetMotor1(M1S)
+		MC.SetMotor2(M2S)
+		MC.SetMotor3(M3S)
+		MC.SetMotor4(M4S)
+		time.sleep(.01)
 except KeyboardInterrupt:
 	MC.End()
 except:
