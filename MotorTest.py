@@ -13,15 +13,15 @@ print('Running MC.Start to Configure the Motors')
 #MC.Calibrate()
 MC.Arm()
 
-Strength = 19
-M1S = 19
-M2S = 19
-M3S = 19
-M4S = 19
-MC.SetMotor1(Strength)
-MC.SetMotor2(Strength)
-MC.SetMotor3(Strength)
-MC.SetMotor4(Strength)
+Strength = 0
+M1S = 0
+M2S = 0
+M3S = 0
+M4S = 0
+MC.SetMotor1(0)
+MC.SetMotor2(0)
+MC.SetMotor3(0)
+MC.SetMotor4(0)
 
 
 # Proportional Test
