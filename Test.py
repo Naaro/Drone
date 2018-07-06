@@ -86,9 +86,9 @@ def control():
         elif inp == "manual":
             manual_drive()
             break
-		elif inp == "arm":
-			arm()
-			break	
+        elif inp == "arm":
+            arm()
+            break	
         else:
             print "WHAT DID I SAID!! Press a,q,d or e"
             
