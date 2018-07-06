@@ -33,29 +33,29 @@ try:
 	while True:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
 		y = GYRO.gety() * PGain 
-		#print('X:'+str(x)+' Y:'+str(y))
+		print('X:'+str(x)+' Y:'+str(y))
 		#print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
-		print('M1:'+str(M1S)+'  M2:'+str(M2S))
+		#print('M1:'+str(M1S)+'  M3:'+str(M3S))
 		if x>0:
 			M1S += abs(x)
-			M2S += abs(x)
-			M3S -= abs(x)
+			M2S -= abs(x)
+			M3S += abs(x)
 			M4S -= abs(x)
 		elif x<0:
 			M1S -= abs(x)
-			M2S -= abs(x)
-			M3S += abs(x)
+			M2S += abs(x)
+			M3S -= abs(x)
 			M4S += abs(x)
 		if y>0:
-			M1S -= abs(y)
+			M1S += abs(y)
 			M2S += abs(y)
 			M3S -= abs(y)
-			M4S += abs(y)
+			M4S -= abs(y)
 		elif y<0:
-			M1S += abs(y)
+			M1S -= abs(y)
 			M2S -= abs(y)
 			M3S += abs(y)
-			M4S -= abs(y)
+			M4S += abs(y)
 		MC.SetMotor1(M1S)
 		MC.SetMotor2(M2S)
 		#MC.SetMotor3(M3S)
