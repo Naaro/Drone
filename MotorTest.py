@@ -23,16 +23,27 @@ MC.SetMotor2(0)
 MC.SetMotor3(-10)
 MC.SetMotor4(-10)
 
+PGain = 0.001
+HighX = 16*PGain
+LowX = -18*PGain
+HighY = 2*PGain
+LowY = -19*PGain
+def IdleTest():
+	if x>HighX:
+		HighX = x
+	if x<LowX:
+		LowX = x
+	if y>HighY:
+		HighY = y
+	if y<LowY:
+		LowY = y
+	print('HighX:'+str(HighX)+'  LowX:'+str(LowX)+'  HighY:'+str(HighY)+'  LowY:'+str(LowY))
 
+	
 # Proportional Test
 print('Begining Proportional Test')
-PGain = 0.001
 x=0
 y=0
-HighX = 0
-LowX = 0
-HighY = 0
-LowY = 0
 try:
 	while True:
 		x = GYRO.getx() * PGain # Get gyro input and dampen it
@@ -41,30 +52,21 @@ try:
 		#print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
 		#print('M1:'+str(M1S)+'  M3:'+str(M3S))
 		if x>HighX:
-			HighX = x
-		if x<LowX:
-			LowX = x
-		if y>HighY:
-			HighY = y
-		if y<LowY:
-			LowY = y
-		print('HighX:'+str(HighX)+'  LowX:'+str(LowX)+'  HighY:'+str(HighY)+'  LowY:'+str(LowY))
-		if x>0:
 			M1S += abs(x)
 			M2S -= abs(x)
 			M3S += abs(x)
 			M4S -= abs(x)
-		elif x<0:
+		elif x<LowX:
 			M1S -= abs(x)
 			M2S += abs(x)
 			M3S -= abs(x)
 			M4S += abs(x)
-		if y>0:
+		if y>HighY:
 			M1S += abs(y)
 			M2S += abs(y)
 			M3S -= abs(y)
 			M4S -= abs(y)
-		elif y<0:
+		elif y<LowY:
 			M1S -= abs(y)
 			M2S -= abs(y)
 			M3S += abs(y)
