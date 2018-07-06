@@ -28,7 +28,7 @@ HighX = 16*PGain
 LowX = -18*PGain
 HighY = 2*PGain
 LowY = -19*PGain
-def IdleTest():
+def IdleTest(x,y):
 	if x>HighX:
 		HighX = x
 	if x<LowX:
@@ -51,7 +51,7 @@ try:
 		#print('X:'+str(x)+' Y:'+str(y))
 		#print('M1:'+str(M1S)+'  M2:'+str(M2S)+'  M3:'+str(M3S)+'  M4:'+str(M4S))
 		#print('M1:'+str(M1S)+'  M2:'+str(M2S))
-		IdleTest()
+		IdleTest(x,y)
 		if x>HighX:
 			M1S += abs(x)
 			M2S -= abs(x)
