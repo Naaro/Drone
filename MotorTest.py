@@ -26,7 +26,7 @@ MC.SetMotor4(-10)
 
 # Proportional Test
 print('Begining Proportional Test')
-PGain = 0.0005
+PGain = 0.001
 x=0
 y=0
 try:
