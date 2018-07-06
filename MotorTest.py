@@ -26,7 +26,7 @@ MC.SetMotor4(0)
 
 # Proportional Test
 print('Begining Proportional Test')
-PGain = 0.0001
+PGain = 0.0005
 x=0
 y=0
 try:
@@ -55,10 +55,10 @@ try:
 			M2S -= abs(y)
 			M3S += abs(y)
 			M4S -= abs(y)
-		#MC.SetMotor1(M1S)
-		#MC.SetMotor2(M2S)
-		#MC.SetMotor3(M3S)
-		#MC.SetMotor4(M4S)
+		MC.SetMotor1(M1S)
+		MC.SetMotor2(M2S)
+		MC.SetMotor3(M3S)
+		MC.SetMotor4(M4S)
 		time.sleep(.01)
 except KeyboardInterrupt:
 	MC.End()
